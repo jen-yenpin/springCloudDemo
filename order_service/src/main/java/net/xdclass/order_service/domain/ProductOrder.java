@@ -9,7 +9,7 @@ import java.util.Date;
  * 商品订单实体类
  */
 @Data
-public class Order implements Serializable {
+public class ProductOrder implements Serializable {
 
 
     private int id;
