@@ -1,6 +1,8 @@
 package net.xdclass.product_service.service;
 
 import net.xdclass.product_service.domain.Product;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -8,6 +10,8 @@ import java.util.*;
 @Service
 public class ProductService {
     private static final Map<Integer, Product> daoMap = new HashMap();
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     static {
         Product p1 = new Product(1, "iphonex", 9999, 10);
@@ -35,6 +39,7 @@ public class ProductService {
     }
 
     public Product findById(int id) {
+        logger.info("service findById");
         return daoMap.get(id);
     }
 }
